@@ -75,6 +75,11 @@ func Check() error {
 	if !strings.Contains(string(index), "retronet-app") {
 		return errors.New("index.html non contiene il mount point")
 	}
+	for _, marker := range []string{"com-file", "session-list", "file-list", "scrollback"} {
+		if !strings.Contains(string(index), marker) {
+			return errors.New("index.html non contiene " + marker)
+		}
+	}
 	return nil
 }
 

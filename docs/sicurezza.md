@@ -7,7 +7,8 @@
 - non implementa autenticazione
 - non configura TLS
 - non salva sessioni su disco
-- non accetta upload file
+- accetta upload solo `.COM` tramite `retronet-api`, nel drive temporaneo della
+  sessione
 - non accede direttamente al filesystem host
 - parla solo con `retronet-api`
 
@@ -34,3 +35,7 @@ CORS piu' rigorosa.
 Il repo non include ROM, BIOS, BDOS storico, immagini disco, font storici,
 manuali copiati o asset proprietari. HTML, CSS, JavaScript e codice Go sono
 scritti per RetroNet.
+
+L'upload `.COM` non autorizza a redistribuire software storico: l'utente deve
+caricare solo programmi propri, sintetici o con licenza compatibile e
+documentata. La UI non include esempi binari `.COM`.

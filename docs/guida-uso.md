@@ -29,7 +29,11 @@ http://127.0.0.1:18081
 - `Connetti`: usa l'ID sessione indicato
 - `Chiudi`: cancella la sessione
 - `Invia`: manda la riga comando al terminale
+- `Upload`: carica un file `.COM` nel drive temporaneo della sessione
+- `File`: aggiorna la lista del drive A:
+- `Dashboard`: aggiorna sessioni attive e stato servizi
 - area terminale: riceve tasti e li inoltra via WebSocket
+- doppio click su un file `.COM` nel drive A: prepara ed esegue `RUN`
 
 Comandi utili nella sessione CP/M-like:
 
@@ -40,6 +44,30 @@ TYPE <file>
 RUN <programma.COM>
 EXIT
 ```
+
+## Caricare Un .COM
+
+1. Premere `Nuova`.
+2. Selezionare un file `.COM` nel controllo `Upload .COM`.
+3. Premere `Upload`.
+4. Controllare che il file compaia in `Drive A:`.
+5. Eseguire:
+
+```text
+RUN NOME
+```
+
+Sono accettati solo nomi CP/M 8.3 con estensione `.COM`. Il file viene caricato
+nel drive temporaneo della sessione, non in una directory scelta dal browser.
+
+Caricare solo programmi propri, sintetici o con licenza compatibile.
+
+## Terminale E Scrollback
+
+Il riquadro principale mostra lo snapshot del terminale con cursore evidenziato.
+Il riquadro inferiore conserva uno scrollback dei byte raw ricevuti, separato
+dallo snapshot: e' utile quando il programma riscrive lo schermo ma vuoi vedere
+anche l'output passato.
 
 ## API Diversa
 

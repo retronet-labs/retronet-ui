@@ -1,9 +1,10 @@
 # retronet-ui
 
-`retronet-ui` e' la prima interfaccia web dell'ecosistema RetroNet. In v0.1
+`retronet-ui` e' la prima interfaccia web dell'ecosistema RetroNet. In v0.2
 espone una console browser per sessioni CP/M-like orchestrate da
 `retronet-api`, usando REST per creare/chiudere sessioni e WebSocket per input,
-output, stato e snapshot terminale.
+output, stato e snapshot terminale. Aggiunge dashboard sessioni, upload sicuro
+`.COM`, lista file del drive A: e scrollback separato.
 
 Non include ROM, BIOS, BDOS storico, immagini disco, font storici o asset
 proprietari.
@@ -47,6 +48,8 @@ git diff --check
 - `GET /config.json` per configurazione iniziale
 - `GET /health` per controllo locale del server UI
 - browser -> `retronet-api` via REST e WebSocket
+- upload `.COM` via multipart verso il drive temporaneo della sessione
+- dashboard sessioni e lista file tramite endpoint API
 
 ## Documentazione
 
@@ -54,6 +57,7 @@ git diff --check
 - [Guida uso](docs/guida-uso.md)
 - [Sicurezza e licenze](docs/sicurezza.md)
 - [Release v0.1.0](docs/release-v0.1.0.md)
+- [Release v0.2.0](docs/release-v0.2.0.md)
 
 ## Licenza
 

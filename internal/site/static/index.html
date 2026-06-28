@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RetroNet UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div id="retronet-app" class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">RN</span>
+          <span class="brand-name">RetroNet UI</span>
+        </div>
+        <div class="status-strip" aria-live="polite">
+          <span id="api-state" class="badge badge-muted">API</span>
+          <span id="session-state" class="badge badge-muted">idle</span>
+          <span id="socket-state" class="badge badge-muted">socket</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="control-panel" aria-label="Controlli sessione">
+          <label class="field-label" for="api-url">API</label>
+          <div class="inline-field">
+            <input id="api-url" type="url" spellcheck="false" value="http://127.0.0.1:8080">
+            <button id="health-btn" type="button">Check</button>
+          </div>
+
+          <label class="field-label" for="session-id">Sessione</label>
+          <div class="inline-field">
+            <input id="session-id" type="text" spellcheck="false" autocomplete="off">
+            <button id="connect-btn" type="button">Connetti</button>
+          </div>
+
+          <div class="button-grid">
+            <button id="new-session-btn" type="button">Nuova</button>
+            <button id="close-session-btn" type="button">Chiudi</button>
+          </div>
+
+          <label class="field-label" for="command-line">Comando</label>
+          <div class="inline-field">
+            <input id="command-line" type="text" spellcheck="false" autocomplete="off" placeholder="DIR">
+            <button id="send-command-btn" type="button">Invia</button>
+          </div>
+
+          <div class="button-grid">
+            <button id="clear-terminal-btn" type="button">Pulisci</button>
+            <button id="focus-terminal-btn" type="button">Focus</button>
+          </div>
+
+          <dl class="facts">
+            <div>
+              <dt>Versione API</dt>
+              <dd id="api-version">-</dd>
+            </div>
+            <div>
+              <dt>Output</dt>
+              <dd id="output-count">0 byte</dd>
+            </div>
+            <div>
+              <dt>Cursore</dt>
+              <dd id="cursor-pos">0,0</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="terminal-area" aria-label="Terminale">
+          <div class="terminal-toolbar">
+            <span id="terminal-title">A:</span>
+            <span id="terminal-meta">80 x 24</span>
+          </div>
+          <pre id="terminal" class="terminal" tabindex="0" aria-label="Schermo terminale"></pre>
+          <div id="log" class="event-log" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
